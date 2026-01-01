@@ -15,17 +15,20 @@ public:
         cin >> n;
         string s;
         cin >> s;
-        if (s.find("2026") != string::npos)
-        {
-            cout << 0 << endl;
-            return;
+
+        bool is2k25 = false ;
+        bool is2k26 = false ;
+
+     if (n >= 4 ){
+        for(int i=0 ; i<=n-4 ; i++){
+            if (s.substr(i,4) == "2025") is2k25 = true ;
+            if (s.substr(i,4) == "2026") is2k26 = true ;
         }
-        if (s.find("2025") == string::npos)
-        {
-            cout << 0 << endl;
-            return;
-        }
-        cout << 1 << endl;
+     }
+    
+    if (is2k26) cout << 0 << endl ;
+    else if (! is2k25) cout << 0 << endl ;
+    else cout << 1<< endl ;
     }
 };
 
